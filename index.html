@@ -6,11 +6,26 @@
   </head>
   <body>
      <!-- Write your markup here  -->
-     
+     <form method="post" action="url to script">
+       <fieldset>
+         <legend>Astro Weight Calculator</legend>
+         
+         <label for="user-weight">Enter Your Earth Weight</label>
+         <input id="user-weight" type="text" placeholder="Weight(lbs)" />
+
+         <label for="planets">Which Planet Are You On?</label>
+        
+         <select id="planets">
+          <option>Pick a planet destination</option>
+        </select>
+
+        <button id="calculate-button">Submit</button>
+        </fieldset>
+     </form>
+    <div>
+      <p id="output"></p>
+    </div>
+
     <script src="main.js" charset="utf-8"></script>
-    <input id="user-weight" type="text" placeholder="Weight(lbs)"/>
-    <selec id="planets" />
-    <p id="output">Output </p>
-    <button id="calculate-button">Submit</button>
   </body>
 </html>
