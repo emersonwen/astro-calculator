@@ -56,10 +56,10 @@ function calculateWeight(weight, planetName) {
     //the planet array. 
     //And then the result will be appended back to the HTML input box ID = 'user-weight'. 
     var userWeight = document.getElementById('user-weight').value;
-    var planetName = document.getElementById('planets');
+    var planetName = document.getElementById('planets').value;
 
     function muti(val) {
-        var result = 0;
+        var val =
         switch (planetName) {
             case planetName===planet[0][0]:
                 val = planet[0][1];
@@ -97,7 +97,7 @@ function calculateWeight(weight, planetName) {
         }
             //A switch statement that evaluates the different planetNames and assigns the associated 
             //planet array values to val. //
-        result = userWeight * val; //Multiply userWeight value with val value defined in the switch statement.
+        let result = userWeight * val; //Multiply userWeight value with val value defined in the switch statement.
         return result;
     }
         //A function that mulitplies the userWeight with the associated Float value of each planet.//
@@ -118,12 +118,57 @@ function handleClickEvent(e) {
      // 3. Create a variable called userWeight and assign the value of the user's weight.
     var userWeight = document.getElementById('user-weight').value;
     // 4. Create a variable called planetName and assign the name of the selected planet from the drop down.
-    var planetName = document.getElementById('planets');
+    var planetName = document.getElementById('planets').value;
     // 5. Create a variable called result and assign the value of the new calculated weight.
     var result = calculatedWeight();
     // 6. Write code to display the message shown in the screenshot.
-
-}
+    function writeMessage(message, planetName, userWeight) {
+        switch (planetName) {
+            case planetName===planet[0][0]:
+                message = 'If you were on Pluto, you would weigh ' + result + ' lbs!';
+                break;
+            case planetName===planet[1][0]:
+                message = 'If you were on Neptune, you would weigh ' + result + ' lbs!';
+                break;
+            case planetName===planet[2][0]:
+                message = 'If you were on Uranus, you would weigh ' + result + ' lbs!';
+                break;
+            case planetName===planet[3][0]:
+                message = 'If you were on Saturn, you wouuld weigh ' + result + ' lbs!';
+                break;
+            case planetName===planet[4][0]:
+                message = 'If you were on Jupiter, you would weigh ' + result + ' lbs!';
+                break;
+            case planetName===planet[5][0]:
+                message = 'If you were on Mars, you would weigh ' + result + ' lbs!';
+                break;
+            case planetName===planet[6][0]:
+                message = 'If you were on Moon, you would weigh ' + result + ' lbs!';
+                break;
+            case planetName===planet[7][0]:
+                message = 'If you were on Earth, you would weigh ' + result + ' lbs!';
+                break;
+            case planetName===planet[8][0]:
+                message = 'If you were on Venus, you would weigh ' + result + ' lbs!';
+                break;
+            case planetName===planet[9][0]:
+                message = 'If you were on Mercury, you would weigh ' + result + ' lbs!';
+                break;
+            case planetName===planet[10][0]:
+                message = 'If you were on Sun, you would weigh ' + result + ' lbs!';
+                break;
+            default:
+                console.log('Enter your true weight and select a planet to find out how much you would weigh on that planet.');
+                break;
+        };
+    };
+    var msg = writeMessage();
+    var post = document.getElementById("output");
+    var elem = document.createElement('p');
+    elem.textContent = msg;
+    elem.value = msg;
+    post.appendChild(elem);
+};
 
 // 7. Set the #calculate-button element's onclick method to use the handleClickEvent function.
 
@@ -135,16 +180,3 @@ function handleClickEvent(e) {
 // Bonus Challenges
 // 8. Reverse the drop down order so that the sun is first.
 
-//function userWeight
-
-//    console.log(Output);
-//'If you were on Pluto, you would weigh 61lbs!'
-//'If you were on Neptune, you would weigh 114.8lbs!'
-//'If you were on Uranus, you would weigh 91.7lbs!'
-//'If you were on Saturn, you wouuld weigh 113.9lbs!'
-//'If you were on Jupiter, you would weigh 264lbs!'
-//'If you were on Mars, you would weigh 38.95lbs!'
-//'If you were on Moon, you would weigh 16.55lbs!'
-//'If you were on Earth, you would weigh 100lbs!'
-//'If you were on Venus, you would weigh 90.32lbs!'
-//'If you were on Mercury, you would weigh 2790lbs!' 
