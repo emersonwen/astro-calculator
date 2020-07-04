@@ -6,22 +6,22 @@
   </head>
   <body>
      <!-- Write your markup here  -->
-     <form method="post" action="url to script">
-       <fieldset>
-         <legend>Astro Weight Calculator</legend>
+    <div> 
+      <form name="Astro Calculator" id="form" method="post">
+      <h1>Astro Weight Calculator</h1>
          
-         <label for="user-weight">Enter Your Earth Weight</label>
-         <input id="user-weight" type="text" placeholder="Weight(lbs)" />
+        <div style="float: left;"><center><h3>Enter Your Earth Weight</h3>
+          <input id="user-weight" type="text" placeholder="Weight (lbs)" /></center></div>
 
-         <label for="planets">Which Planet Are You On?</label>
-        
-         <select id="planets">
-          <option>Pick a planet destination</option>
-        </select>
+        <div style="float: right;"><h3>Which Planet Are You On?</h3>
+          <select id="planets">
+            <option>Pick a planet</option>
+          </select></div>
 
-        <button id="calculate-button">Submit</button>
-        </fieldset>
-     </form>
+        <div style="position: center;"><input id="calculate-button" type="button" value="Calculate" onclick="handleClickEvent()" /></div>
+      </form>
+      </div>
+    
     <div>
       <p id="output"></p>
     </div>

@@ -71,11 +71,11 @@ function calculateWeight(weight, planetName, userWeight) {
 
     if(planetName===planetArray && userWeight>=0) {
         weight = userWeight * value;
+        return weight;
     } else {
         weight = 0;
+        return weight;
     };
-
-    return weight; 
   
     // var val =
     //     switch (planetName) {
@@ -134,6 +134,7 @@ function handleClickEvent() {
     var planetName = document.getElementById('planets').value;
     // 5. Create a variable called result and assign the value of the new calculated weight.
     var result = calculateWeight(weight, planetName, userWeight);
+    return result;
     // 6. Write code to display the message shown in the screenshot.
     function writeMessage(message, planetName) {
         var message = "";
