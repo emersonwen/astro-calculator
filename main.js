@@ -48,83 +48,32 @@ function planetsDropDown(_item, _index) {
 
 
 
-function calculateWeight(weight, planetName, userWeight) {
+function calculateWeight(planetName, userWeight) {
     // 2. Write the code to return the correct weight
 
     //If the planet selected in the dropdown matches the planet name in the array, 
     //then user's Earth weight entered in the form will multiply by the associated 
     //FLOAT number in the planet array. 
     
-    var i, len, planetArray, value; 
+    var i, len, planetArray, value, weight; 
 
-    for(i=0, len=planets.length, planetArray="", value=0; i<len; i++) {
+    value=1;
+    weight=0;
+    for(i=0, len=planets.length, planetArray=""; i<len; i++) {
         planetArray = planets[i][0];
         if(planetArray===planetName) {
             value = planets[i][1];
-            return value;
-        } else {
-            value = 1;
         };
-        return planetArray;
     }; //Matching the planet name from the dropdown with the original array using
        //for loop. And then pull the associated value from the array.
-
-    if(planetName===planetArray && userWeight>=0) {
-        weight = userWeight * value;
+  
+    if(userWeight>=0) {
+         weight = userWeight * value;
         return weight;
     } else {
         weight = 0;
         return weight;
     };
-  
-    // var val =
-    //     switch (planetName) {
-    //         case planetName===planets[0][0]:
-    //             val = planets[0][1];
-    //             break;
-    //         case planetName===planets[1][0]:
-    //             val = planets[1][1];
-    //             break;
-    //         case planetName===planets[2][0]:
-    //             val = planets[2][1];
-    //             break;
-    //         case planetName===planets[3][0]:
-    //             val = planets[3][1];
-    //             break;
-    //         case planetName===planets[4][0]:
-    //             val = planets[4][1];
-    //             break;
-    //         case planetName===planets[5][0]:
-    //             val = planets[5][1];
-    //             break;
-    //         case planetName===planets[6][0]:
-    //             val = planets[6][1];
-    //             break;
-    //         case planetName===planets[7][0]:
-    //             val = planets[7][1];
-    //             break;
-    //         case planetName===planets[8][0]:
-    //             val = planets[8][1];
-    //             break;
-    //         case planetName===planets[9][0]:
-    //             val = planets[9][1];
-    //             break;
-    //         case planetName===planets[10][0]:
-    //             val = planets[10][1];
-    //             break;
-    //     }
-    //         //A switch statement that evaluates the different planetNames and assigns the associated 
-            //planet array values to val. //
-    //   weight = userWeight * val; //Multiply userWeight value with val value defined in the switch statement.
-    //   return weight;
-    //}
-        //A function that mulitplies the userWeight with the associated Float value of each planet.//
-    
-    //let weight = multi();
-        //Weight captures the output value of the multi() function.//
-
-    //return weight;
-        //The output value of weight variable returned.//
 };
 
 function handleClickEvent() {
@@ -133,58 +82,9 @@ function handleClickEvent() {
     // 4. Create a variable called planetName and assign the name of the selected planet from the drop down.
     var planetName = document.getElementById('planets').value;
     // 5. Create a variable called result and assign the value of the new calculated weight.
-    var result = calculateWeight(weight, planetName, userWeight);
-    return result;
+    var result = calculateWeight(planetName, userWeight);
     // 6. Write code to display the message shown in the screenshot.
-    function writeMessage(message, planetName) {
-        var message = "";
-        switch (planetName) {
-            case 'Pluto':
-                message = 'If you were on Pluto, you would weigh ' + result + ' lbs!';
-                break;
-            case 'Neptune':
-                message = 'If you were on Neptune, you would weigh ' + result + ' lbs!';
-                break;
-            case 'Uranus':
-                message = 'If you were on Uranus, you would weigh ' + result + ' lbs!';
-                break;
-            case 'Saturn':
-                message = 'If you were on Saturn, you wouuld weigh ' + result + ' lbs!';
-                break;
-            case 'Jupiter':
-                message = 'If you were on Jupiter, you would weigh ' + result + ' lbs!';
-                break;
-            case 'Mars':
-                message = 'If you were on Mars, you would weigh ' + result + ' lbs!';
-                break;
-            case 'Moon':
-                message = 'If you were on Moon, you would weigh ' + result + ' lbs!';
-                break;
-            case 'Earth':
-                message = 'If you were on Earth, you would weigh ' + result + ' lbs!';
-                break;
-            case 'Venus':
-                message = 'If you were on Venus, you would weigh ' + result + ' lbs!';
-                break;
-            case 'Mercury':
-                message = 'If you were on Mercury, you would weigh ' + result + ' lbs!';
-                break;
-            case 'Sun':
-                message = 'If you were on Sun, you would weigh ' + result + ' lbs!';
-                break;
-            default:
-                message = 'Enter your true weight and select a planet to find out how much you would weigh on that planet.';
-                break;
-        };     
-        return message;
-    };
-
-    var msg = writeMessage();
-    var post = document.getElementById('output');
-    var el = document.createElement("p");
-    el.textContent = msg;
-    el.value = msg;
-    post.appendChild(el);
+    document.getElementById("output").innerHTML = "If you were on " + planetName + ", you would weigh " + result + " lbs!";
 };
 
 // 7. Set the #calculate-button element's onclick method to use the handleClickEvent function.

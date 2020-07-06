@@ -6,9 +6,9 @@
   </head>
   <body>
      <!-- Write your markup here  -->
-    <div> 
-      <form name="Astro Calculator" id="form" method="post">
-      <h1>Astro Weight Calculator</h1>
+    <div>
+      <form name="Astro Calculator" id="form" action="" onsubmit="">
+        <h1>Astro Weight Calculator</h1>
          
         <div style="float: left;"><center><h3>Enter Your Earth Weight</h3>
           <input id="user-weight" type="text" placeholder="Weight (lbs)" /></center></div>
@@ -18,7 +18,9 @@
             <option>Pick a planet</option>
           </select></div>
 
-        <div style="position: center;"><input id="calculate-button" type="button" value="Calculate" onclick="handleClickEvent()" /></div>
+        <div style="position: center;">
+          <button id="calculate-button" type="button" onClick="handleClickEvent()">Calculate</button>
+        </div>
       </form>
       </div>
     
