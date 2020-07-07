@@ -2,30 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Astro Weight Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Montserrat+Subrayada:wght@700&display=swap" rel="stylesheet">
+
   </head>
-  <body>
+  <body id="body">
      <!-- Write your markup here  -->
     <div>
       <form name="Astro Calculator" id="form" action="" onsubmit="">
-        <h1>Astro Weight Calculator</h1>
-         
-        <div style="float: left;"><center><h3>Enter Your Earth Weight</h3>
-          <input id="user-weight" type="text" placeholder="Weight (lbs)" /></center></div>
-
-        <div style="float: right;"><h3>Which Planet Are You On?</h3>
-          <select id="planets">
-            <option>Pick a planet</option>
-          </select></div>
-
-        <div style="position: center;">
-          <button id="calculate-button" type="button" onClick="handleClickEvent()">Calculate</button>
+        <div class="row">
+          <div class="col-sm-12"><h1 id="header" style="font-family: 'Montserrat Subrayada', sans-serif;">Astro Weight Calculator</h1>
+          </div>
         </div>
+        
+        <div class="row" id="wrapper">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6" id="weight-entry"><h3 style="font-family: 'Dosis', sans-serif;">Enter Your Earth Weight</h3>
+            <input id="user-weight" type="text" placeholder="Weight (lbs)" style="text-align:center"/>
+          </div>
+          <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row" id="wrapper">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6" id="planet-selector"><h3 style="font-family: 'Dosis', sans-serif;">Which Planet Are You On?</h3>
+            <select id="planets">
+              <option>Pick a planet</option>
+            </select>
+          </div>
+          <div class="col-sm-3"></div>
+        </div>
+
+        <div class="row">
+          <center><button id="calculate-button" type="button" onClick="handleClickEvent()" style="font-family: 'Dosis', sans-serif;">Calculate</button>
+          </center>
+          </div>
       </form>
       </div>
     
-    <div>
-      <p id="output"></p>
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6"><p id="output" style="font-family: 'Dosis', sans-serif;"></p></div>
+      <div class="col-sm-3"></div>
     </div>
 
     <script src="main.js" charset="utf-8"></script>

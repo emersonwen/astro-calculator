@@ -43,9 +43,8 @@ function planetsDropDown(_item, _index) {
         //This initializes the first 'item' in the dropdown list.//
     select.appendChild(elem);
         //Finally, we're passing the array item from 'planets' array that is attached to the 
-        //"option" element back to the HTML ID 'planets'.//
+        //"option" element back to the HTML ID 'planets'.// 
 };
-
 
 
 function calculateWeight(planetName, userWeight) {
@@ -76,6 +75,32 @@ function calculateWeight(planetName, userWeight) {
     };
 };
 
+// var planetBackground = [
+//     ['Pluto', 'url(https://www.loc.gov/static/managed-content/uploads/sites/16/2018/09/pluto-rich-color.jpg)'],
+//     ['Neptune', 'url(https://upload.wikimedia.org/wikipedia/commons/6/63/Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg)'],
+//     ['Uranus', 'url(https://solarsystem.nasa.gov/system/stellar_items/image_files/69_feature_1600x900_uranus_new.jpg)'],
+//     ['Saturn', 'url(https://solarsystem.nasa.gov/system/stellar_items/image_files/38_saturn_1600x900.jpg)'],
+//     ['Jupiter', 'url(https://www.weizmann-usa.org/media/3635/kaspi_jupiter_south-pole.jpg?width=640&height=395)'],
+//     ['Mars', 'url(https://thumbs-prod.si-cdn.com/4YFSMs6_GpocadQ_kju9qRe9Qz4=/fit-in/1600x0/https://public-media.si-cdn.com/filer/6e/55/6e552d6b-0ae5-4a63-b72c-22484f00f890/mars.jpg)'],
+//     ['Moon', 'url(https://www.nj.com/resizer/8jjwv7VYcLmOFO_YkxwcLK_BkEY=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/H4Y7GD3ZEJEV5BU2RUHQJ74HUM.jpg)'],
+//     ['Earth', 'url(https://www.gstatic.com/earth/social/00_generic_facebook-001.jpg)'],
+//     ['Venus', 'url(https://cdn.mos.cms.futurecdn.net/kaPwBjHiUKax8syodHNPmF-320-80.jpg)'],
+//     ['Mercury', 'url(https://solarsystem.nasa.gov/system/stellar_items/image_files/2_feature_1600x900_mercury.jpg)'],
+//     ['Sun', 'url(https://www.princeton.edu/sites/default/files/styles/1x_full_2x_half_crop/public/images/2018/07/ISOIS_still_2_d.jpg?itok=D7a96C66)']
+// ];
+
+// function changeBackground(planetSelected) {
+//     var i, len, planetArr, url; 
+//     url="url(https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1357&q=80)";
+    
+//     for(i=0, len=planetBackground.length, planetArr=""; i<len; i++) {
+//         planetArr = planetBackground[i][0];
+//         if(planetArr===planetSelected) {
+//             url = planetBackground[i][1];
+//         };  
+//     };
+// };
+
 function handleClickEvent() {
      // 3. Create a variable called userWeight and assign the value of the user's weight.
     var userWeight = document.getElementById('user-weight').value;
@@ -84,7 +109,7 @@ function handleClickEvent() {
     // 5. Create a variable called result and assign the value of the new calculated weight.
     var result = calculateWeight(planetName, userWeight);
     // 6. Write code to display the message shown in the screenshot.
-    document.getElementById("output").innerHTML = "If you were on " + planetName + ", you would weigh " + result + " lbs!";
+    document.getElementById("output").innerHTML = "If you were on " + planetName + ", you would weigh " + result + " lbs!";   
 };
 
 // 7. Set the #calculate-button element's onclick method to use the handleClickEvent function.
